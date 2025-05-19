@@ -17,6 +17,7 @@ async function loadProductDetails() {
       throw new Error('Product not found');
     }
 
+    // const im = product.productImage[0];
     document.getElementById('product-image').src = product.productImage[0];
     document.getElementById('product-image').alt = product.name;
 
