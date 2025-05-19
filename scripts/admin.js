@@ -194,6 +194,7 @@ function saveProduct() {
     .filter(value => value.trim() !== '');
   
   const product = {
+    id: productId,
     name: productName,
     price: productPrice,
     frontImage: frontImage,
