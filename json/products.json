@@ -8,12 +8,12 @@
             "hoverImage": "img/2093LP2.webp",
             "detailsLink": "./pages/productDetail.html?id=1",
             "productImage": [
-                "../img/2093LP.webp",
-                "../img/2093LP2.webp",
-                "../img/2093LP3.webp",
-                "../img/2093LP4.webp",
-                "../img/2093LP5.webp",
-                "../img/2093LP6.webp"
+                "./img/2093LP.webp",
+                "./img/2093LP2.webp",
+                "./img/2093LP3.webp",
+                "./img/2093LP4.webp",
+                "./img/2093LP5.webp",
+                "./img/2093LP6.webp"
             ]
         },
         {
@@ -24,10 +24,10 @@
             "hoverImage": "img/LYFESTYLEHOODIE2.webp",
             "detailsLink": "./pages/productDetail.html?id=2",
             "productImage": [
-                "../img/lyfestylehoodie.webp",
-                "../img/lyfestylehoodie2.webp",
-                "../img/lyfestylehoodie3.webp",
-                "../img/lyfestylehoodie4.webp"
+                "./img/lyfestylehoodie.webp",
+                "./img/lyfestylehoodie2.webp",
+                "./img/lyfestylehoodie3.webp",
+                "./img/lyfestylehoodie4.webp"
             ]
         },
         {
@@ -38,8 +38,8 @@
             "hoverImage": "img/2093HAT2.webp",
             "detailsLink": "./pages/productDetail.html?id=3",
             "productImage": [
-                "../img/2093hat.webp",
-                "../img/2093hat2.webp"
+                "./img/2093hat.webp",
+                "./img/2093hat2.webp"
             ]
         },
         {
@@ -50,8 +50,8 @@
             "hoverImage": "img/BALACLAVA2.webp",
             "detailsLink": "./pages/productDetail.html?id=4",
             "productImage": [
-                "../img/balaclava.webp",
-                "../img/balaclava2.webp"
+                "./img/balaclava.webp",
+                "./img/balaclava2.webp"
             ]
         },
         {
@@ -62,8 +62,8 @@
             "hoverImage": "img/CORPLONGSLEEVE2.webp",
             "detailsLink": "./pages/productDetail.html?id=5",
             "productImage": [
-                "../img/corplongsleeve.webp",
-                "../img/corplongsleeve2.webp"
+                "./img/corplongsleeve.webp",
+                "./img/corplongsleeve2.webp"
             ]
         },
         {
@@ -74,8 +74,8 @@
             "hoverImage": "img/LOGOT2.webp",
             "detailsLink": "./pages/productDetail.html?id=6",
             "productImage": [
-                "../img/logot.webp",
-                "../img/logot2.webp"
+                "./img/logot.webp",
+                "./img/logot2.webp"
             ]
         },
         {
@@ -86,8 +86,8 @@
             "hoverImage": "img/CORPHOODIE2.webp",
             "detailsLink": "./pages/productDetail.html?id=7",
             "productImage": [
-                "../img/corphoodie.webp",
-                "../img/corphoodie2.webp"
+                "./img/corphoodie.webp",
+                "./img/corphoodie2.webp"
             ]
         },
         {
@@ -98,8 +98,8 @@
             "hoverImage": "img/FUTURET2.webp",
             "detailsLink": "./pages/productDetail.html?id=8",
             "productImage": [
-                "../img/futuret.webp",
-                "../img/futuret2.webp"
+                "./img/futuret.webp",
+                "./img/futuret2.webp"
             ]
         },
         {
@@ -110,8 +110,8 @@
             "hoverImage": "img/EYESHIRT2.webp",
             "detailsLink": "./pages/productDetail.html?id=9",
             "productImage": [
-                "../img/eyeshirt.webp",
-                "../img/eyeshirt2.webp"
+                "./img/eyeshirt.webp",
+                "./img/eyeshirt2.webp"
             ]
         },
         {
@@ -122,8 +122,8 @@
             "hoverImage": "img/CHAINSHIRT2.webp",
             "detailsLink": "./pages/productDetail.html?id=10",
             "productImage": [
-                "../img/chainshirt.webp",
-                "../img/chainshirt2.webp"
+                "./img/chainshirt.webp",
+                "./img/chainshirt2.webp"
             ]
         },
         {
@@ -134,9 +134,9 @@
             "hoverImage": "img/UNIFORMT2.webp",
             "detailsLink": "./pages/productDetail.html?id=11",
             "productImage": [
-                "../img/uniformt.webp",
-                "../img/uniformt2.webp",
-                "../img/uniformt3.webp"
+                "./img/uniformt.webp",
+                "./img/uniformt2.webp",
+                "./img/uniformt3.webp"
             ]
         },
         {
@@ -147,9 +147,9 @@
             "hoverImage": "img/POLO2.webp",
             "detailsLink": "./pages/productDetail.html?id=12",
             "productImage": [
-                "../img/polo.webp",
-                "../img/polo3.webp",
-                "../img/polo2.webp"
+                "./img/polo.webp",
+                "./img/polo3.webp",
+                "./img/polo2.webp"
             ]
         },
         {
@@ -160,10 +160,10 @@
             "hoverImage": "img/WORKHAT2.webp",
             "detailsLink": "./pages/productDetail.html?id=13",
             "productImage": [
-                "../img/workhat.webp",
-                "../img/workhat3.webp",
-                "../img/workhat2.webp",
-                "../img/workhat4.webp"
+                "./img/workhat.webp",
+                "./img/workhat3.webp",
+                "./img/workhat2.webp",
+                "./img/workhat4.webp"
             ]
         },
         {
@@ -174,7 +174,7 @@
             "hoverImage": "img/VISOR.webp",
             "detailsLink": "./pages/productDetail.html?id=14",
             "productImage": [
-                "../img/visor.webp"
+                "./img/visor.webp"
             ]
         },
         {
@@ -185,7 +185,7 @@
             "hoverImage": "img/8-CUP PACK.webp",
             "detailsLink": "./pages/productDetail.html?id=15",
             "productImage": [
-                "../img/8-cup pack.webp"
+                "./img/8-cup pack.webp"
             ]
         },
         {
@@ -196,15 +196,15 @@
             "hoverImage": "img/STICKER2.webp",
             "detailsLink": "./pages/productDetail.html?id=16",
             "productImage": [
-                "../img/sticker.webp",
-                "../img/sticker2.webp",
-                "../img/sticker3.webp",
-                "../img/sticker4.webp",
-                "../img/sticker5.avif",
-                "../img/sticker6.avif",
-                "../img/sticker7.avif",
-                "../img/sticker8.avif",
-                "../img/sticker9.avif"
+                "./img/sticker.webp",
+                "./img/sticker2.webp",
+                "./img/sticker3.webp",
+                "./img/sticker4.webp",
+                "./img/sticker5.avif",
+                "./img/sticker6.avif",
+                "./img/sticker7.avif",
+                "./img/sticker8.avif",
+                "./img/sticker9.avif"
             ]
         },
         {
@@ -215,14 +215,14 @@
             "hoverImage": "img/BOXSET22.webp",
             "detailsLink": "./pages/productDetail.html?id=17",
             "productImage": [
-                "../img/boxset2.webp",
-                "../img/boxset22.webp",
-                "../img/boxset23.webp",
-                "../img/cd.webp",
-                "../img/cd2.webp",
-                "../img/cd3.webp",
-                "../img/signed.webp",
-                "../img/box.webp"
+                "./img/boxset2.webp",
+                "./img/boxset22.webp",
+                "./img/boxset23.webp",
+                "./img/cd.webp",
+                "./img/cd2.webp",
+                "./img/cd3.webp",
+                "./img/signed.webp",
+                "./img/box.webp"
             ]
         },
         {
@@ -233,14 +233,14 @@
             "hoverImage": "img/BOXSET12.webp",
             "detailsLink": "./pages/productDetail.html?id=18",
             "productImage": [
-                "../img/boxset1.webp",
-                "../img/boxset12.webp",
-                "../img/boxset13.webp",
-                "../img/cd.webp",
-                "../img/cd2.webp",
-                "../img/cd3.webp",
-                "../img/signed.webp",
-                "../img/box.webp"
+                "./img/boxset1.webp",
+                "./img/boxset12.webp",
+                "./img/boxset13.webp",
+                "./img/cd.webp",
+                "./img/cd2.webp",
+                "./img/cd3.webp",
+                "./img/signed.webp",
+                "./img/box.webp"
             ]
         },
         {
@@ -251,16 +251,16 @@
             "hoverImage": "img/CPFM22.webp",
             "detailsLink": "./pages/productDetail.html?id=19",
             "productImage": [
-                "../img/cpfm2.webp",
-                "../img/cpfm22.webp",
-                "../img/cpfm25.png",
-                "../img/cpfm23.webp",
-                "../img/cpfm24.webp",
-                "../img/cd.webp",
-                "../img/cd2.webp",
-                "../img/cd3.webp",
-                "../img/signed.webp",
-                "../img/box.webp"
+                "./img/cpfm2.webp",
+                "./img/cpfm22.webp",
+                "./img/cpfm25.png",
+                "./img/cpfm23.webp",
+                "./img/cpfm24.webp",
+                "./img/cd.webp",
+                "./img/cd2.webp",
+                "./img/cd3.webp",
+                "./img/signed.webp",
+                "./img/box.webp"
             ]
         },
         {
@@ -271,16 +271,16 @@
             "hoverImage": "img/CPFM12.webp",
             "detailsLink": "./pages/productDetail.html?id=20",
             "productImage": [
-                "../img/cpfm1.webp",
-                "../img/cpfm12.webp",
-                "../img/cpfm13.webp",
-                "../img/cpfm14.webp",
-                "../img/cpfm15.webp",
-                "../img/cd.webp",
-                "../img/cd2.webp",
-                "../img/cd3.webp",
-                "../img/signed.webp",
-                "../img/box.webp"
+                "./img/cpfm1.webp",
+                "./img/cpfm12.webp",
+                "./img/cpfm13.webp",
+                "./img/cpfm14.webp",
+                "./img/cpfm15.webp",
+                "./img/cd.webp",
+                "./img/cd2.webp",
+                "./img/cd3.webp",
+                "./img/signed.webp",
+                "./img/box.webp"
             ]
         },
         {
@@ -291,14 +291,14 @@
             "hoverImage": "img/HERONPRESON22.webp",
             "detailsLink": "./pages/productDetail.html?id=21",
             "productImage": [
-                "../img/heronpreson2.webp",
-                "../img/heronpreson22.webp",
-                "../img/heronpresonback.png",
-                "../img/cd.webp",
-                "../img/cd2.webp",
-                "../img/cd3.webp",
-                "../img/signed.webp",
-                "../img/box.webp"
+                "./img/heronpreson2.webp",
+                "./img/heronpreson22.webp",
+                "./img/heronpresonback.png",
+                "./img/cd.webp",
+                "./img/cd2.webp",
+                "./img/cd3.webp",
+                "./img/signed.webp",
+                "./img/box.webp"
             ]
         },
         {
@@ -309,14 +309,14 @@
             "hoverImage": "img/HERONPRESON12.webp",
             "detailsLink": "./pages/productDetail.html?id=22",
             "productImage": [
-                "../img/heronpreson1.webp",
-                "../img/heronpreson12.webp",
-                "../img/heronpresonback.png",
-                "../img/cd.webp",
-                "../img/cd2.webp",
-                "../img/cd3.webp",
-                "../img/signed.webp",
-                "../img/box.webp"
+                "./img/heronpreson1.webp",
+                "./img/heronpreson12.webp",
+                "./img/heronpresonback.png",
+                "./img/cd.webp",
+                "./img/cd2.webp",
+                "./img/cd3.webp",
+                "./img/signed.webp",
+                "./img/box.webp"
             ]
         },
         {
@@ -327,12 +327,12 @@
             "hoverImage": "img/LYFESTYLELP2.webp",
             "detailsLink": "./pages/productDetail.html?id=23",
             "productImage": [
-                "../img/lyfestyleLP.webp",
-                "../img/lyfestyleLP2.webp",
-                "../img/lyfestyleLP3.webp",
-                "../img/lyfestyleLP4.webp",
-                "../img/lyfestyleLP5.webp",
-                "../img/signed.webp"
+                "./img/lyfestyleLP.webp",
+                "./img/lyfestyleLP2.webp",
+                "./img/lyfestyleLP3.webp",
+                "./img/lyfestyleLP4.webp",
+                "./img/lyfestyleLP5.webp",
+                "./img/signed.webp"
             ]
         },
         {
@@ -343,11 +343,11 @@
             "hoverImage": "img/LYFESTYLEDUNECD2.webp",
             "detailsLink": "./pages/productDetail.html?id=24",
             "productImage": [
-                "../img/lyfestyledunecd.webp",
-                "../img/lyfestyledunecd3.webp",
-                "../img/lyfestyledunecd2.webp",
-                "../img/cd.webp",
-                "../img/signed.webp"
+                "./img/lyfestyledunecd.webp",
+                "./img/lyfestyledunecd3.webp",
+                "./img/lyfestyledunecd2.webp",
+                "./img/cd.webp",
+                "./img/signed.webp"
             ]
         },
         {
@@ -358,11 +358,11 @@
             "hoverImage": "img/LYFESTYLEDRONECD2.webp",
             "detailsLink": "./pages/productDetail.html?id=25",
             "productImage": [
-                "../img/lyfestyledronecd.webp",
-                "../img/lyfestyledronecd3.webp",
-                "../img/lyfestyledronecd2.webp",
-                "../img/cd.webp",
-                "../img/signed.webp"
+                "./img/lyfestyledronecd.webp",
+                "./img/lyfestyledronecd3.webp",
+                "./img/lyfestyledronecd2.webp",
+                "./img/cd.webp",
+                "./img/signed.webp"
             ]
         },
         {
@@ -373,11 +373,11 @@
             "hoverImage": "img/LYFESTYLEHORSECD2.webp",
             "detailsLink": "./pages/productDetail.html?id=26",
             "productImage": [
-                "../img/lyfestylehorsecd.webp",
-                "../img/lyfestylehorsecd3.webp",
-                "../img/lyfestylehorsecd2.webp",
-                "../img/cd.webp",
-                "../img/signed.webp"
+                "./img/lyfestylehorsecd.webp",
+                "./img/lyfestylehorsecd3.webp",
+                "./img/lyfestylehorsecd2.webp",
+                "./img/cd.webp",
+                "./img/signed.webp"
             ]
         },
         {
@@ -388,7 +388,7 @@
             "hoverImage": "img/LYFESTYLEDIGITALDELUXE.webp",
             "detailsLink": "./pages/productDetail.html?id=27",
             "productImage": [
-                "../img/LYFESTYLEDIGITALDELUXE.webp"
+                "./img/LYFESTYLEDIGITALDELUXE.webp"
             ]
         },
         {
@@ -399,7 +399,7 @@
             "hoverImage": "img/LYFESTYLEDIGITALALBUM.webp",
             "detailsLink": "./pages/productDetail.html?id=28",
             "productImage": [
-                "../img/LYFESTYLEDIGITALALBUM.webp"
+                "./img/LYFESTYLEDIGITALALBUM.webp"
             ]
         }
     ]
