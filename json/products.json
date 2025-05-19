@@ -1,0 +1,406 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "2093 COLLECTOR'S EDITION 3LP VINYL",
+            "price": "€34,95",
+            "frontImage": "img/2093LP.webp",
+            "hoverImage": "img/2093LP2.webp",
+            "detailsLink": "./pages/productDetail.html?id=1",
+            "productImage": [
+                "../img/2093LP.webp",
+                "../img/2093LP2.webp",
+                "../img/2093LP3.webp",
+                "../img/2093LP4.webp",
+                "../img/2093LP5.webp",
+                "../img/2093LP6.webp"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "LYFESTYLE HOODIE",
+            "price": "€88,95",
+            "frontImage": "img/LYFESTYLEHOODIE.webp",
+            "hoverImage": "img/LYFESTYLEHOODIE2.webp",
+            "detailsLink": "./pages/productDetail.html?id=2",
+            "productImage": [
+                "../img/lyfestylehoodie.webp",
+                "../img/lyfestylehoodie2.webp",
+                "../img/lyfestylehoodie3.webp",
+                "../img/lyfestylehoodie4.webp"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "2093 HAT",
+            "price": "€31,95",
+            "frontImage": "img/2093HAT.webp",
+            "hoverImage": "img/2093HAT2.webp",
+            "detailsLink": "./pages/productDetail.html?id=3",
+            "productImage": [
+                "../img/2093hat.webp",
+                "../img/2093hat2.webp"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "LYFESTYLE BALACLAVA",
+            "price": "€26,95",
+            "frontImage": "img/BALACLAVA.webp",
+            "hoverImage": "img/BALACLAVA2.webp",
+            "detailsLink": "./pages/productDetail.html?id=4",
+            "productImage": [
+                "../img/balaclava.webp",
+                "../img/balaclava2.webp"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "LYFESTYLE CORP LONGSLEEVE",
+            "price": "€58,95",
+            "frontImage": "img/CORPLONGSLEEVE.webp",
+            "hoverImage": "img/CORPLONGSLEEVE2.webp",
+            "detailsLink": "./pages/productDetail.html?id=5",
+            "productImage": [
+                "../img/corplongsleeve.webp",
+                "../img/corplongsleeve2.webp"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "LYFESTYLE CORP LOGO TEE",
+            "price": "€35,95",
+            "frontImage": "img/LOGOT.webp",
+            "hoverImage": "img/LOGOT2.webp",
+            "detailsLink": "./pages/productDetail.html?id=6",
+            "productImage": [
+                "../img/logot.webp",
+                "../img/logot2.webp"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "LYFESTYLE CORP HOODIE",
+            "price": "€89,95",
+            "frontImage": "img/CORPHOODIE.webp",
+            "hoverImage": "img/CORPHOODIE2.webp",
+            "detailsLink": "./pages/productDetail.html?id=7",
+            "productImage": [
+                "../img/corphoodie.webp",
+                "../img/corphoodie2.webp"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "THE FUTURE IS NOW TEE",
+            "price": "€35,95",
+            "frontImage": "img/FUTURET.webp",
+            "hoverImage": "img/FUTURET2.webp",
+            "detailsLink": "./pages/productDetail.html?id=8",
+            "productImage": [
+                "../img/futuret.webp",
+                "../img/futuret2.webp"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "2093 EYE TEE",
+            "price": "€35,95",
+            "frontImage": "img/EYESHIRT.webp",
+            "hoverImage": "img/EYESHIRT2.webp",
+            "detailsLink": "./pages/productDetail.html?id=9",
+            "productImage": [
+                "../img/eyeshirt.webp",
+                "../img/eyeshirt2.webp"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "2093 CHAIN TEE",
+            "price": "€35,95",
+            "frontImage": "img/CHAINSHIRT.webp",
+            "hoverImage": "img/CHAINSHIRT2.webp",
+            "detailsLink": "./pages/productDetail.html?id=10",
+            "productImage": [
+                "../img/chainshirt.webp",
+                "../img/chainshirt2.webp"
+            ]
+        },
+        {
+            "id": 11,
+            "name": "L-STYLE UNIFORM TEE",
+            "price": "€31,95",
+            "frontImage": "img/UNIFORMT.webp",
+            "hoverImage": "img/UNIFORMT2.webp",
+            "detailsLink": "./pages/productDetail.html?id=11",
+            "productImage": [
+                "../img/uniformt.webp",
+                "../img/uniformt2.webp",
+                "../img/uniformt3.webp"
+            ]
+        },
+        {
+            "id": 12,
+            "name": "L-STYLE UNIFORM POLO",
+            "price": "€35,95",
+            "frontImage": "img/POLO.webp",
+            "hoverImage": "img/POLO2.webp",
+            "detailsLink": "./pages/productDetail.html?id=12",
+            "productImage": [
+                "../img/polo.webp",
+                "../img/polo3.webp",
+                "../img/polo2.webp"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "1-800-GO2-WORK HAT",
+            "price": "€31,95",
+            "frontImage": "img/WORKHAT.webp",
+            "hoverImage": "img/WORKHAT2.webp",
+            "detailsLink": "./pages/productDetail.html?id=13",
+            "productImage": [
+                "../img/workhat.webp",
+                "../img/workhat3.webp",
+                "../img/workhat2.webp",
+                "../img/workhat4.webp"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "L-STYLE UNIFORM VISOR",
+            "price": "€26,95",
+            "frontImage": "img/VISOR.webp",
+            "hoverImage": "img/VISOR.webp",
+            "detailsLink": "./pages/productDetail.html?id=14",
+            "productImage": [
+                "../img/visor.webp"
+            ]
+        },
+        {
+            "id": 15,
+            "name": "L-STYLE STYROFOAM 8-CUP PACK",
+            "price": "€13,95",
+            "frontImage": "img/8-CUP PACK.webp",
+            "hoverImage": "img/8-CUP PACK.webp",
+            "detailsLink": "./pages/productDetail.html?id=15",
+            "productImage": [
+                "../img/8-cup pack.webp"
+            ]
+        },
+        {
+            "id": 16,
+            "name": "L-STYLE STICKER PACK",
+            "price": "€9,95",
+            "frontImage": "img/STICKER.webp",
+            "hoverImage": "img/STICKER2.webp",
+            "detailsLink": "./pages/productDetail.html?id=16",
+            "productImage": [
+                "../img/sticker.webp",
+                "../img/sticker2.webp",
+                "../img/sticker3.webp",
+                "../img/sticker4.webp",
+                "../img/sticker5.avif",
+                "../img/sticker6.avif",
+                "../img/sticker7.avif",
+                "../img/sticker8.avif",
+                "../img/sticker9.avif"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "LYFESTYLE BOX SET 2",
+            "price": "€44,95",
+            "frontImage": "img/BOXSET2.webp",
+            "hoverImage": "img/BOXSET22.webp",
+            "detailsLink": "./pages/productDetail.html?id=17",
+            "productImage": [
+                "../img/boxset2.webp",
+                "../img/boxset22.webp",
+                "../img/boxset23.webp",
+                "../img/cd.webp",
+                "../img/cd2.webp",
+                "../img/cd3.webp",
+                "../img/signed.webp",
+                "../img/box.webp"
+            ]
+        },
+        {
+            "id": 18,
+            "name": "LYFESTYLE BOX SET 1",
+            "price": "€44,95",
+            "frontImage": "img/BOXSET1.webp",
+            "hoverImage": "img/BOXSET12.webp",
+            "detailsLink": "./pages/productDetail.html?id=18",
+            "productImage": [
+                "../img/boxset1.webp",
+                "../img/boxset12.webp",
+                "../img/boxset13.webp",
+                "../img/cd.webp",
+                "../img/cd2.webp",
+                "../img/cd3.webp",
+                "../img/signed.webp",
+                "../img/box.webp"
+            ]
+        },
+        {
+            "id": 19,
+            "name": "LYFESTYLE CPFM BOX SET 2",
+            "price": "€44,95",
+            "frontImage": "img/CPFM2.webp",
+            "hoverImage": "img/CPFM22.webp",
+            "detailsLink": "./pages/productDetail.html?id=19",
+            "productImage": [
+                "../img/cpfm2.webp",
+                "../img/cpfm22.webp",
+                "../img/cpfm25.png",
+                "../img/cpfm23.webp",
+                "../img/cpfm24.webp",
+                "../img/cd.webp",
+                "../img/cd2.webp",
+                "../img/cd3.webp",
+                "../img/signed.webp",
+                "../img/box.webp"
+            ]
+        },
+        {
+            "id": 20,
+            "name": "LYFESTYLE CPFM BOX SET 1",
+            "price": "€44,95",
+            "frontImage": "img/CPFM1.webp",
+            "hoverImage": "img/CPFM12.webp",
+            "detailsLink": "./pages/productDetail.html?id=20",
+            "productImage": [
+                "../img/cpfm1.webp",
+                "../img/cpfm12.webp",
+                "../img/cpfm13.webp",
+                "../img/cpfm14.webp",
+                "../img/cpfm15.webp",
+                "../img/cd.webp",
+                "../img/cd2.webp",
+                "../img/cd3.webp",
+                "../img/signed.webp",
+                "../img/box.webp"
+            ]
+        },
+        {
+            "id": 21,
+            "name": "LYFESTYLE HERON PRESTON BOX SET 2",
+            "price": "€44,95",
+            "frontImage": "img/HERONPRESON2.webp",
+            "hoverImage": "img/HERONPRESON22.webp",
+            "detailsLink": "./pages/productDetail.html?id=21",
+            "productImage": [
+                "../img/heronpreson2.webp",
+                "../img/heronpreson22.webp",
+                "../img/heronpresonback.png",
+                "../img/cd.webp",
+                "../img/cd2.webp",
+                "../img/cd3.webp",
+                "../img/signed.webp",
+                "../img/box.webp"
+            ]
+        },
+        {
+            "id": 22,
+            "name": "LYFESTYLE HERON PRESTON BOX SET 1",
+            "price": "€44,95",
+            "frontImage": "img/HERONPRESON1.webp",
+            "hoverImage": "img/HERONPRESON12.webp",
+            "detailsLink": "./pages/productDetail.html?id=22",
+            "productImage": [
+                "../img/heronpreson1.webp",
+                "../img/heronpreson12.webp",
+                "../img/heronpresonback.png",
+                "../img/cd.webp",
+                "../img/cd2.webp",
+                "../img/cd3.webp",
+                "../img/signed.webp",
+                "../img/box.webp"
+            ]
+        },
+        {
+            "id": 23,
+            "name": "LYFESTYLE SIGNED 2LP VINYL (FIRST EDITION PRESSING)",
+            "price": "$30,00",
+            "frontImage": "img/LYFESTYLELP.webp",
+            "hoverImage": "img/LYFESTYLELP2.webp",
+            "detailsLink": "./pages/productDetail.html?id=23",
+            "productImage": [
+                "../img/lyfestyleLP.webp",
+                "../img/lyfestyleLP2.webp",
+                "../img/lyfestyleLP3.webp",
+                "../img/lyfestyleLP4.webp",
+                "../img/lyfestyleLP5.webp",
+                "../img/signed.webp"
+            ]
+        },
+        {
+            "id": 24,
+            "name": "LYFESTYLE SIGNED CD (DUNE EDITION)",
+            "price": "$15,00",
+            "frontImage": "img/LYFESTYLEDUNECD.webp",
+            "hoverImage": "img/LYFESTYLEDUNECD2.webp",
+            "detailsLink": "./pages/productDetail.html?id=24",
+            "productImage": [
+                "../img/lyfestyledunecd.webp",
+                "../img/lyfestyledunecd3.webp",
+                "../img/lyfestyledunecd2.webp",
+                "../img/cd.webp",
+                "../img/signed.webp"
+            ]
+        },
+        {
+            "id": 25,
+            "name": "LYFESTYLE SIGNED CD (DRONE EDITION)",
+            "price": "$15,00",
+            "frontImage": "img/LYFESTYLEDRONECD.webp",
+            "hoverImage": "img/LYFESTYLEDRONECD2.webp",
+            "detailsLink": "./pages/productDetail.html?id=25",
+            "productImage": [
+                "../img/lyfestyledronecd.webp",
+                "../img/lyfestyledronecd3.webp",
+                "../img/lyfestyledronecd2.webp",
+                "../img/cd.webp",
+                "../img/signed.webp"
+            ]
+        },
+        {
+            "id": 26,
+            "name": "LYFESTYLE SIGNED CD (HORSE EDITION)",
+            "price": "$15,00",
+            "frontImage": "img/LYFESTYLEHORSECD.webp",
+            "hoverImage": "img/LYFESTYLEHORSECD2.webp",
+            "detailsLink": "./pages/productDetail.html?id=26",
+            "productImage": [
+                "../img/lyfestylehorsecd.webp",
+                "../img/lyfestylehorsecd3.webp",
+                "../img/lyfestylehorsecd2.webp",
+                "../img/cd.webp",
+                "../img/signed.webp"
+            ]
+        },
+        {
+            "id": 27,
+            "name": "LYFESTYLE DIGITAL DELUXE ALBUM",
+            "price": "$10,00",
+            "frontImage": "img/LYFESTYLEDIGITALDELUXE.webp",
+            "hoverImage": "img/LYFESTYLEDIGITALDELUXE.webp",
+            "detailsLink": "./pages/productDetail.html?id=27",
+            "productImage": [
+                "../img/LYFESTYLEDIGITALDELUXE.webp"
+            ]
+        },
+        {
+            "id": 28,
+            "name": "LYFESTYLE DIGITAL ALBUM",
+            "price": "$5,00",
+            "frontImage": "img/LYFESTYLEDIGITALALBUM.webp",
+            "hoverImage": "img/LYFESTYLEDIGITALALBUM.webp",
+            "detailsLink": "./pages/productDetail.html?id=28",
+            "productImage": [
+                "../img/LYFESTYLEDIGITALALBUM.webp"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYFESTYLE store</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./styles/indexPage.css">
+    <script src="./scripts/indexPage.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar-container">
+                <div class="logo-container">
+                    <img src="img/logo.png" alt="LYFESTYLE Logo" height="40">
+                    <a href="https://yeat.lnk.to/LYFESTYLE" class="listen-now" target="_blank">Listen now!</a>
+                </div>
+
+                <div class="shop-title">
+                    <h1>LYFESTYLE Shop</h1>
+                </div>
+
+                <div class="cart-container">
+                    <a href="shopping-cart.html" class="cart-icon">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-count" class="badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <div class="row" id="products-container">
+        </div>
+        <section class="video-section">
+            <div class="container">
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <video controls poster="img/placeholder.jpg">
+                            <source src="Trailer.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2093 Lyfestyle Corporation</p>
+        </div>
+    </footer>
+</body>
+</html>

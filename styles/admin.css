@@ -1,0 +1,149 @@
+body {
+  background-image: url("../Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+header {
+  background-color: #000;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.admin-title {
+  text-align: center;
+  color: white;
+}
+
+.admin-title h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.back-to-shop {
+  background-color: transparent;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 0;
+  font-weight: normal;
+  border: 1px solid white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.back-to-shop:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.product-list-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table img {
+  max-height: 50px;
+  width: auto;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.action-buttons .btn {
+  margin-right: 5px;
+}
+
+.action-buttons .btn:last-child {
+  margin-right: 0;
+}
+
+.modal-content {
+  background-color: #232323;
+  color: white;
+}
+
+.modal-header, .modal-footer {
+  border-color: #444;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.form-control, .form-select {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #333;
+  color: white;
+  border-color: #777;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+footer {
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.search-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+#search-products {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+#search-products:focus {
+  background-color: #333;
+  color: white;
+  border-color: #777;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .admin-title h1 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,248 @@
+body {
+  background-image: url("../Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: #000;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.shop-title {
+  text-align: center;
+  color: white;
+}
+
+.shop-title h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.listen-now {
+  background-color: transparent;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 0;
+  margin-left: 15px;
+  font-weight: normal;
+  border: 1px solid white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.listen-now:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cart-container {
+  position: relative;
+}
+
+.cart-icon {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+/* Product cards */
+.card-title,
+.card-text {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight: bold;
+}
+
+.btn-primary.add-to-cart {
+  background-color: rgba(125, 122, 122, 0.5) !important;
+  border-color: rgba(3, 3, 3, 0.7) !important;
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+  border-radius: 20px; /* Rondere knoppen */
+}
+
+.btn-primary.add-to-cart:hover {
+  background-color: rgba(95, 95, 95, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  background-color: transparent !important;
+  border: none; /* Border verwijderd */
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 15px; /* Rondere hoeken voor video */
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  display: block;
+  border-radius: 15px; /* Rondere hoeken voor video */
+  object-fit: cover;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 15px; /* Rondere hoeken voor video */
+}
+
+.video-section {
+  background-color: transparent !important;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+
+.video-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-image-link {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* Gelijke hoogte voor productkaarten */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: transparent !important;
+  border: none !important; /* Border verwijderd */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px; /* Rondere hoeken voor productkaarten */
+  overflow: hidden; /* Zorgt ervoor dat de inhoud binnen de afgeronde hoeken blijft */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card .position-relative {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0; /* Rondere hoeken alleen aan de bovenkant */
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.product-image.img-hover {
+  opacity: 0;
+}
+
+.product-card .position-relative:hover .img-front {
+  opacity: 0;
+}
+
+.product-card .position-relative:hover .img-hover {
+  opacity: 1;
+}
+
+.card {
+  background-color: transparent !important;
+  border: none !important; /* Border verwijderd */
+  border-radius: 15px; /* Rondere hoeken */
+}
+
+/* Donkergrijze achtergrond voor productinfo */
+.card-body {
+  background-color: rgba(50, 50, 50, 0.85);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 15px 15px; /* Rondere hoeken alleen aan de onderkant */
+  padding: 15px;
+}
+
+footer {
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 768px) {
+  .shop-title h1 {
+    font-size: 1.2rem;
+  }
+
+  .listen-now {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+  }
+}

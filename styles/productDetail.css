@@ -1,0 +1,134 @@
+body {
+    background-color: #1a1a1a;
+    background-image: url('../Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.product-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product-image {
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.thumbnail {
+    width: 90%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.thumbnail:hover {
+    border-color: #28a745;
+}
+
+.btn-add-cart {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.product-details {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.also-available {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.also-available h2 {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.merch-item {
+    margin-bottom: 30px;
+}
+
+.merch-image {
+    width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.merch-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.header-black {
+    background-color: #000;
+    padding: 15px 0;
+}
+
+.navbar-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+    color: white;
+}
+
+.listen-now {
+    background-color: rgba(50, 50, 50, 0.7);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 5px;
+    margin-left: 20px;
+    font-weight: bold;
+    border: 2px solid white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.listen-now:hover {
+    background-color: rgba(100, 100, 100, 0.7);
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
