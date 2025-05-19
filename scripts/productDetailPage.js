@@ -144,11 +144,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.head.appendChild(script)
     }
 
-    const response = await fetch("../json/products.json")
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-    const data = await response.json()
+   let data;
+
+if (localStorage.getItem("products")) {
+  data = JSON.parse(localStorage.getItem("products"));
+} else {
+  const response = await fetch('../json/products.json');
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  data = await response.json();
+}
+
 
     const product = data.products.find((p) => String(p.id) === String(productId))
     if (!product) {
