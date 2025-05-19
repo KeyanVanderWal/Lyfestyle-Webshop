@@ -132,21 +132,33 @@ async function displayCart() {
     try {
         let productsData
 
-        try {
-            const response = await fetch("/json/products.json")
-            console.log("Fetch response status:", response.status)
-            productsData = await response.json()
-        } catch (e) {
-            console.log("First path failed, trying alternative path")
-            try {
-                const response = await fetch("../json/products.json")
-                productsData = await response.json()
-            } catch (e2) {
-                console.log("Second path failed, trying another path")
-                const response = await fetch("json/products.json")
-                productsData = await response.json()
-            }
-        }
+        let productsData;
+
+if (localStorage.getItem("products")) {
+  console.log("Loading products from localStorage...");
+  productsData = JSON.parse(localStorage.getItem("products"));
+} else {
+  try {
+    const response = await fetch("/json/products.json");
+    console.log("Fetch response status:", response.status);
+    productsData = await response.json();
+  } catch (e) {
+    console.log("First path failed, trying alternative path");
+    try {
+      const response = await fetch("../json/products.json");
+      productsData = await response.json();
+    } catch (e2) {
+      console.log("Second path failed, trying another path");
+      const response = await fetch("json/products.json");
+      productsData = await response.json();
+    }
+  }
+
+  if (productsData) {
+    localStorage.setItem("products", JSON.stringify(productsData));
+  }
+}
+
 
         console.log("Products data loaded:", productsData)
 
