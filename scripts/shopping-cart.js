@@ -132,21 +132,51 @@ async function displayCart() {
     try {
         let productsData
 
-        try {
-            const response = await fetch("/json/products.json")
-            console.log("Fetch response status:", response.status)
-            productsData = await response.json()
-        } catch (e) {
-            console.log("First path failed, trying alternative path")
-            try {
-                const response = await fetch("../json/products.json")
-                productsData = await response.json()
-            } catch (e2) {
-                console.log("Second path failed, trying another path")
-                const response = await fetch("json/products.json")
-                productsData = await response.json()
-            }
-        }
+        let productsData;
+
+if (localStorage.getItem("products")) {
+  console.log("Loading products from localStorage...");
+  try {
+    productsData = JSON.parse(localStorage.getItem("products"));
+  } catch (e) {
+    console.error("Failed to parse localStorage data. Falling back to fetch.", e);
+  }
+}
+
+if (!productsData) {
+  console.log("No local data. Attempting to fetch products...");
+
+  try {
+    const response = await fetch("/json/products.json");
+    console.log("First fetch response status:", response.status);
+    if (!response.ok) throw new Error("First path failed");
+    productsData = await response.json();
+  } catch (e) {
+    console.log("First path failed, trying alternative path");
+
+    try {
+      const response = await fetch("../json/products.json");
+      if (!response.ok) throw new Error("Second path failed");
+      productsData = await response.json();
+    } catch (e2) {
+      console.log("Second path failed, trying another path");
+
+      try {
+        const response = await fetch("json/products.json");
+        if (!response.ok) throw new Error("Third path failed");
+        productsData = await response.json();
+      } catch (e3) {
+        console.error("All fetch attempts failed.");
+      }
+    }
+  }
+
+  if (productsData) {
+    localStorage.setItem("products", JSON.stringify(productsData));
+    console.log("Products saved to localStorage.");
+  }
+}
+
 
         console.log("Products data loaded:", productsData)
 
