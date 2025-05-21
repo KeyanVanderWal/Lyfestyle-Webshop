@@ -260,6 +260,9 @@ function updateProductsJSON() {
   console.log('New products.json data:', JSON.stringify(productsData, null, 2));
 }
 
+function showToast(message) {
+  alert(message);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts();
