@@ -7,26 +7,22 @@ body {
     background-attachment: fixed;
     color: white;
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
-/* MOBILE-FIRST LAYOUT */
 .product-container {
-    width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .product-image {
-    width: 100%;
+    width: 90%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 .thumbnail {
-    width: 100%;
+    width: 90%;
     height: auto;
     cursor: pointer;
     border: 2px solid transparent;
@@ -42,47 +38,35 @@ body {
     background-color: white;
     color: black;
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
     width: 100%;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-add-cart:hover {
-    background-color: #e6e6e6;
 }
 
 .product-title {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .product-price {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .product-details {
-    margin-top: 15px;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    text-align: justify;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 .also-available {
-    margin-top: 50px;
+    margin-top: 60px;
     text-align: center;
 }
 
 .also-available h2 {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     font-weight: bold;
-    font-size: 1.4rem;
 }
 
 .merch-item {
@@ -90,17 +74,14 @@ body {
 }
 
 .merch-image {
-    width: 100%;
-    max-width: 300px;
+    width: 80%;
     height: auto;
-    margin: 0 auto 15px;
-    display: block;
+    margin-bottom: 15px;
 }
 
 .merch-title {
     font-weight: bold;
     margin-bottom: 5px;
-    font-size: 1rem;
 }
 
 .header-black {
@@ -109,18 +90,19 @@ body {
 }
 
 .navbar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .shop-title {
-    position: static;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
+    z-index: 1;
     color: white;
-    margin-bottom: 10px;
 }
 
 .listen-now {
@@ -128,16 +110,17 @@ body {
     color: white;
     padding: 6px 18px;
     border-radius: 5px;
+    margin-left: 20px;
     font-weight: bold;
     border: 2px solid white;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
 }
 
 .listen-now:hover {
     background-color: rgba(100, 100, 100, 0.7);
     color: white;
+    text-decoration: none;
 }
 
 a {
@@ -149,41 +132,13 @@ a:hover {
     color: white;
 }
 
-@media (min-width: 768px) {
-    .product-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 30px;
-    }
+@media (max-width: 768px) {
+  .shop-title h1 {
+    font-size: 1.2rem;
+  }
 
-    .product-title {
-        font-size: 2rem;
-        text-align: left;
-    }
-
-    .product-price {
-        font-size: 1.5rem;
-        text-align: left;
-    }
-
-    .product-details {
-        font-size: 1rem;
-        text-align: left;
-    }
-
-    .navbar-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .shop-title {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-    }
-
-    .merch-image {
-        width: 80%;
-    }
+  .listen-now {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+  }
 }
