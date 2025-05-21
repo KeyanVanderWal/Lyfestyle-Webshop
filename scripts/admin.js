@@ -18,7 +18,7 @@ async function loadProducts() {
     if (storedProducts) {
       products = JSON.parse(storedProducts);
     } else {
-      const response = await fetch('./json/products.json');
+      const response = await fetch('../json/products.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -260,9 +260,6 @@ function updateProductsJSON() {
   console.log('New products.json data:', JSON.stringify(productsData, null, 2));
 }
 
-function showToast(message) {
-  alert(message);
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts();
