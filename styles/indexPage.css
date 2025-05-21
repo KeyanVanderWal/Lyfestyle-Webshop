@@ -81,7 +81,6 @@ header {
   font-size: 0.7rem;
 }
 
-/* Product cards */
 .card-title,
 .card-text {
   color: white;
@@ -94,7 +93,7 @@ header {
   border-color: rgba(3, 3, 3, 0.7) !important;
   backdrop-filter: blur(2px);
   transition: all 0.3s ease;
-  border-radius: 20px; /* Rondere knoppen */
+  border-radius: 20px;
 }
 
 .btn-primary.add-to-cart:hover {
@@ -109,14 +108,14 @@ header {
   margin: 0 auto;
   padding-bottom: 30px;
   background-color: transparent !important;
-  border: none; /* Border verwijderd */
+  border: none;
 }
 
 .video-wrapper {
   width: 100%;
   max-width: 800px;
   height: auto;
-  border-radius: 15px; /* Rondere hoeken voor video */
+  border-radius: 15px;
   overflow: hidden;
 }
 
@@ -125,7 +124,7 @@ header {
   height: auto;
   max-height: 500px;
   display: block;
-  border-radius: 15px; /* Rondere hoeken voor video */
+  border-radius: 15px;
   object-fit: cover;
 }
 
@@ -136,7 +135,7 @@ header {
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 15px; /* Rondere hoeken voor video */
+  border-radius: 15px;
 }
 
 .video-section {
@@ -162,7 +161,6 @@ header {
   z-index: 10;
 }
 
-/* Gelijke hoogte voor productkaarten */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -170,12 +168,12 @@ header {
 
 .product-card {
   background-color: transparent !important;
-  border: none !important; /* Border verwijderd */
+  border: none !important;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-radius: 15px; /* Rondere hoeken voor productkaarten */
-  overflow: hidden; /* Zorgt ervoor dat de inhoud binnen de afgeronde hoeken blijft */
+  border-radius: 15px;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -186,7 +184,7 @@ header {
 .product-card .position-relative {
   position: relative;
   overflow: hidden;
-  border-radius: 15px 15px 0 0; /* Rondere hoeken alleen aan de bovenkant */
+  border-radius: 15px 15px 0 0;
 }
 
 .product-image {
@@ -214,17 +212,16 @@ header {
 
 .card {
   background-color: transparent !important;
-  border: none !important; /* Border verwijderd */
-  border-radius: 15px; /* Rondere hoeken */
+  border: none !important;
+  border-radius: 15px;
 }
 
-/* Donkergrijze achtergrond voor productinfo */
 .card-body {
   background-color: rgba(50, 50, 50, 0.85);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border-radius: 0 0 15px 15px; /* Rondere hoeken alleen aan de onderkant */
+  border-radius: 0 0 15px 15px; 
   padding: 15px;
 }
 
