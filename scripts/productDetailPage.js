@@ -18,22 +18,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.head.appendChild(script)
     }
 
-    let data
-
-    if (localStorage.getItem("products")) {
-      console.log("Loading products from localStorage")
-      data = JSON.parse(localStorage.getItem("products"))
-    } else {
-      console.log("Fetching products from JSON file")
-      const response = await fetch("../json/products.json")
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-      data = await response.json()
-
-      // Save products to localStorage for future use
-      saveProductsToLocalStorage(data)
+    console.log("Fetching latest products from JSON file")
+    const response = await fetch("../json/products.json")
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
+    const jsonData = await response.json()
+    
+    localStorage.setItem("products", JSON.stringify(jsonData))
+    console.log("Updated products saved to localStorage")
+    
+    const data = jsonData
 
     const product = data.products.find((p) => String(p.id) === String(productId))
     if (!product) {
@@ -156,9 +151,4 @@ function updateCartCount() {
 
   cartCountElement.textContent = itemCount
   cartCountElement.style.display = itemCount > 0 ? "inline-block" : "none"
-}
-
-function saveProductsToLocalStorage(products) {
-  localStorage.setItem("products", JSON.stringify(products))
-  console.log("Products saved to localStorage")
 }
