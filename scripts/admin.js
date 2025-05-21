@@ -50,7 +50,7 @@ function displayProducts(filteredProducts = null) {
     
     row.innerHTML = `
       <td>${product.id}</td>
-      <td><img src="${product.frontImage}" alt="${product.name}" class="img-thumbnail" width="50"></td>
+      <td><img src="/${product.frontImage}" alt="${product.name}" class="img-thumbnail" width="50"></td>
       <td>${product.name}</td>
       <td>${product.price}</td>
       <td class="action-buttons">
