@@ -48,9 +48,17 @@ function displayProducts(filteredProducts = null) {
   productsToDisplay.forEach(product => {
     const row = document.createElement('tr');
     
+    let slash = "";
+    const s1 = product.frontImage.substring(0, 5);
+    if (s1 != "https") {
+      slash = '/';
+    } else {
+      slash = "";
+    }
+
     row.innerHTML = `
       <td>${product.id}</td>
-      <td><img src="/${product.frontImage}" alt="${product.name}" class="img-thumbnail" width="50"></td>
+      <td><img src="${slash}${product.frontImage}" alt="${product.name}" class="img-thumbnail" width="50"></td>
       <td>${product.name}</td>
       <td>${product.price}</td>
       <td class="action-buttons">
@@ -113,13 +121,11 @@ function openAddProductModal() {
 function handleEditProduct(event) {
   const productId = parseInt(event.currentTarget.getAttribute('data-id'));
   const product = products.find(p => p.id === productId);
-  
   if (!product) return;
   
   currentProductId = productId;
   
-  document.getElementById('productModalLabel').textContent = 'Edit Product';
-  
+  document.getElementById('productModalLabel').textContent = 'Edit Product';  
   document.getElementById('product-id').value = product.id;
   document.getElementById('product-name').value = product.name;
   document.getElementById('product-price').value = product.price;
@@ -248,7 +254,7 @@ function deleteProduct() {
     deleteModal.hide();
     displayProducts();
     
-    showToast('Product deleted successfully!');
+    // showToast('Product deleted successfully!');
   }
 }
 
