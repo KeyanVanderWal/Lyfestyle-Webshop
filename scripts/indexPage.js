@@ -63,11 +63,8 @@ async function loadProducts() {
 
 function setupProductImageInteractions() {
   const productContainers = document.querySelectorAll(".product-image-container");
-  const longPressThreshold = 300;
-  let longPressTimers = {};
-  let touchStartTime = 0;
-  
-  productContainers.forEach((container, index) => {
+
+  productContainers.forEach((container) => {
     container.addEventListener("mouseenter", function() {
       const frontImg = this.querySelector(".img-front");
       const hoverImg = this.querySelector(".img-hover");
@@ -87,46 +84,62 @@ function setupProductImageInteractions() {
     });
 
     container.addEventListener("touchstart", function(e) {
-      const containerId = index;
-      touchStartTime = Date.now();
-      
-      longPressTimers[containerId] = setTimeout(() => {
+      if (!this.classList.contains("touched")) {
+        e.preventDefault();
+
+        document.querySelectorAll(".product-image-container.touched").forEach((el) => {
+          if (el !== this) {
+            el.classList.remove("touched");
+            const frontImg = el.querySelector(".img-front");
+            const hoverImg = el.querySelector(".img-hover");
+            if (frontImg && hoverImg) {
+              frontImg.style.opacity = "1";
+              hoverImg.style.opacity = "0";
+            }
+          }
+        });
+
+        this.classList.add("touched");
         const frontImg = this.querySelector(".img-front");
         const hoverImg = this.querySelector(".img-hover");
         if (frontImg && hoverImg) {
           frontImg.style.opacity = "0";
           hoverImg.style.opacity = "1";
         }
-      }, longPressThreshold);
-      
-    }, { passive: true });
-
-    container.addEventListener("touchend", function(e) {
-      const containerId = index;
-      const touchDuration = Date.now() - touchStartTime;
-      
-      clearTimeout(longPressTimers[containerId]);
-      
-      const frontImg = this.querySelector(".img-front");
-      const hoverImg = this.querySelector(".img-hover");
-      if (frontImg && hoverImg) {
-        frontImg.style.opacity = "1";
-        hoverImg.style.opacity = "0";
       }
-      
-      if (touchDuration < longPressThreshold) {
-        const link = this.querySelector(".product-image-link");
-        if (link) {
-          window.location.href = link.getAttribute("href");
-        }
-      }
-    });
+    }, { passive: false });
 
     const productLink = container.querySelector(".product-image-link");
     if (productLink) {
       productLink.addEventListener("click", function(e) {
-        if ('ontouchstart' in window) {
+        const container = this.closest(".product-image-container");
+        if (container && container.classList.contains("touched")) {
+          return true;
+        } else {
           e.preventDefault();
+          if (container) {
+            container.classList.add("touched");
+            const frontImg = container.querySelector(".img-front");
+            const hoverImg = container.querySelector(".img-hover");
+            if (frontImg && hoverImg) {
+              frontImg.style.opacity = "0";
+              hoverImg.style.opacity = "1";
+            }
+          }
+        }
+      });
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".product-image-container")) {
+      document.querySelectorAll(".product-image-container.touched").forEach((container) => {
+        container.classList.remove("touched");
+        const frontImg = container.querySelector(".img-front");
+        const hoverImg = container.querySelector(".img-hover");
+        if (frontImg && hoverImg) {
+          frontImg.style.opacity = "1";
+          hoverImg.style.opacity = "0";
         }
       });
     }
