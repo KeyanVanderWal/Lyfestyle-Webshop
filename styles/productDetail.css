@@ -132,3 +132,13 @@ a:hover {
     color: white;
 }
 
+@media (max-width: 768px) {
+  .shop-title h1 {
+    font-size: 1.2rem;
+  }
+
+  .listen-now {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+  }
+}
