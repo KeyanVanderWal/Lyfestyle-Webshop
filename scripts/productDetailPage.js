@@ -1,264 +1,175 @@
-async function loadProductDetails() {
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("✅ DOMContentLoaded triggered");
+  
   try {
+    // ✅ 1. Haal product ID op uit URL
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = parseInt(urlParams.get('id'));
-    if (!productId) {
-      throw new Error('No product ID provided in URL');
+    const productIdParam = urlParams.get("id");
+
+    if (!productIdParam) {
+      throw new Error("❌ Geen product ID gevonden in de URL.");
     }
 
- let data;
+    const productId = parseInt(productIdParam);
+    console.log("ℹ️ Geselecteerd product ID:", productId);
 
-if (localStorage.getItem("products")) {
-  data = JSON.parse(localStorage.getItem("products"));
-} else {
-  const response = await fetch('../json/products.json');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  data = await response.json();
-}
+    // ✅ 2. Productdata ophalen uit localStorage of via fetch
+    let data;
 
+    const storedProducts = localStorage.getItem("products");
 
-    const product = data.products.find(p => p.id === productId);
+    if (storedProducts) {
+      console.log("✅ Producten gevonden in localStorage");
+      data = JSON.parse(storedProducts);
+    } else {
+      console.log("⚠️ Geen producten in localStorage. Ophalen via fetch...");
+      const response = await fetch("../json/products.json");
+
+      if (!response.ok) {
+        throw new Error(`❌ Fout bij ophalen van JSON: ${response.status}`);
+      }
+
+      data = await response.json();
+      console.log("✅ Producten succesvol opgehaald via fetch");
+
+      // Sla op in localStorage voor volgende keer
+      localStorage.setItem("products", JSON.stringify(data));
+      console.log("✅ Producten opgeslagen in localStorage");
+    }
+
+    if (!data || !Array.isArray(data.products)) {
+      throw new Error("❌ Ongeldige of ontbrekende products-array in data.");
+    }
+
+    // ✅ 3. Zoek het specifieke product op
+    const product = data.products.find((p) => p.id === productId);
+
     if (!product) {
-      throw new Error('Product not found');
+      throw new Error("❌ Product niet gevonden met ID: " + productId);
     }
 
-    document.getElementById('product-image').src = product.productImage[0];
-    document.getElementById('product-image').alt = product.name;
+    console.log("✅ Product gevonden:", product);
 
-    const thumbnailsContainer = document.querySelector('.thumbnails');
-    thumbnailsContainer.innerHTML = '';
+    // ✅ 4. Toon hoofdafbeelding
+    const mainImage = document.getElementById("product-image");
+    mainImage.src = product.productImage[0];
+    mainImage.alt = product.name;
+
+    // ✅ 5. Toon thumbnails
+    const thumbnailsContainer = document.querySelector(".thumbnails");
+    thumbnailsContainer.innerHTML = "";
 
     if (Array.isArray(product.productImage)) {
       product.productImage.forEach((image, index) => {
-        const colDiv = document.createElement('div');
-        colDiv.className = 'col-3';
+        const colDiv = document.createElement("div");
+        colDiv.className = "col-3";
 
-        const img = document.createElement('img');
+        const img = document.createElement("img");
         img.id = `thumbnail-${index + 1}`;
         img.src = image;
         img.alt = `${product.name} View ${index + 1}`;
-        img.className = 'thumbnail';
+        img.className = "thumbnail";
 
-        img.addEventListener('click', function () {
-          document.getElementById('product-image').src = this.src;
+        img.addEventListener("click", function () {
+          mainImage.src = this.src;
         });
 
         colDiv.appendChild(img);
         thumbnailsContainer.appendChild(colDiv);
       });
+
+      console.log("✅ Thumbnails toegevoegd:", product.productImage.length);
     }
 
-    document.getElementById('product-title').textContent = product.name;
-    document.getElementById('product-price').textContent = product.price.replace(',', '.');
-    document.getElementById('add-to-cart').setAttribute('data-product-id', product.id);
+    // ✅ 6. Vul productgegevens
+    document.getElementById("product-title").textContent = product.name;
+    document.getElementById("product-price").textContent = product.price.replace(',', '.');
+    document.getElementById("add-to-cart").setAttribute("data-product-id", product.id);
 
     document.title = `${product.name} - Lyfestyle Shop`;
 
-    const detailsContainer = document.getElementById('product-details');
+    const detailsContainer = document.getElementById("product-details");
     detailsContainer.innerHTML = `
-            <p>ITEM IS IN STOCK AND SHIPS IN 3-5 BUSINESS DAYS</p>
-            <p>${product.name.includes('HAT') ? 'EMBROIDERED FRONT GRAPHICS<br>ADJUSTABLE 5 PANEL HAT<br>COLOR BLACK' : 'PREMIUM QUALITY MATERIAL'}</p>
-        `;
+      <p>ITEM IS IN STOCK AND SHIPS IN 3-5 BUSINESS DAYS</p>
+      <p>${product.name.includes("HAT") ? "EMBROIDERED FRONT GRAPHICS<br>ADJUSTABLE 5 PANEL HAT<br>COLOR BLACK" : "PREMIUM QUALITY MATERIAL"}</p>
+    `;
 
-    const otherProducts = data.products.filter(p => p.id !== productId);
+    // ✅ 7. Toon andere producten
+    const otherProducts = data.products.filter((p) => p.id !== productId);
     const selectedProducts = otherProducts.sort(() => Math.random() - 0.5).slice(0, 4);
-    const alsoAvailableContainer = document.getElementById('also-available-container');
-    alsoAvailableContainer.innerHTML = '';
 
-    selectedProducts.forEach(p => {
-      const productImage = Array.isArray(p.productImage) ?
-        p.productImage[0] :
-        (p.frontImage ? `../img/${p.frontImage.split('/').pop()}` : '../img/placeholder.webp');
-
-      const merchItem = `
-                <div class="col-md-3 col-6 merch-item">
-                    <a href="?id=${p.id}">
-                        <img src="${productImage}" class="merch-image" alt="${p.name}">
-                        <div class="merch-title">${p.name}</div>
-                        <div class="merch-price">${p.price.replace(',', '.')}</div>
-                    </a>
-                </div>
-            `;
-
-      alsoAvailableContainer.innerHTML += merchItem;
-    });
-  } catch (error) {
-    console.error('Error loading product:', error);
-    document.querySelector('.product-container').innerHTML = '<div class="col-12 text-center text-white">Error loading product. Please try again later.</div>';
-  }
-}
-
-function addToCart(id) {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  console.log(cart);
-  const item = cart.find((i) => i.id === id);
-  if (item) {
-    item.quantity++
-  } else {
-    cart.push({ id, quantity: 1 })
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  console.log('cart', cart);
-
-  updateCartCount();
-}
-
-function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartCountElement = document.getElementById('cart-count');
-  cartCountElement.textContent = cart.reduce((a, b) => a + b.quantity, 0);
-  cartCountElement.style.display = cart.length > 0 ? 'inline-block' : 'none';
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  loadProductDetails();
-  updateCartCount();
-});
-
-console.log("Script loaded successfully!");
-console.log("This script will now:");
-console.log("1. Dynamically create thumbnails based on the number of images in the JSON");
-console.log("2. Show only one image per product in the 'also available' section");
-
-document.addEventListener("DOMContentLoaded", async () => {
-  console.log("Product detail page script loaded")
-
-  try {
-    const urlParams = new URLSearchParams(window.location.search)
-    const productId = urlParams.get("id")
-
-    if (!productId) {
-      throw new Error("No product ID provided in URL")
-    }
-
-    console.log("Product ID from URL:", productId)
-
-    if (typeof window.addToCart !== "function") {
-      console.log("Loading shopping cart script")
-      const script = document.createElement("script")
-      script.src = "../scripts/shopping-cart.js"
-      document.head.appendChild(script)
-    }
-
-   let data;
-
-if (localStorage.getItem("products")) {
-  data = JSON.parse(localStorage.getItem("products"));
-} else {
-  const response = await fetch('../json/products.json');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  data = await response.json();
-}
-
-
-    const product = data.products.find((p) => String(p.id) === String(productId))
-    if (!product) {
-      throw new Error("Product not found")
-    }
-
-    document.getElementById("product-image").src = product.productImage[0]
-    document.getElementById("product-image").alt = product.name
-
-    const thumbnailsContainer = document.querySelector(".thumbnails")
-    thumbnailsContainer.innerHTML = ""
-
-    if (Array.isArray(product.productImage)) {
-      product.productImage.forEach((image, index) => {
-        const colDiv = document.createElement("div")
-        colDiv.className = "col-3"
-
-        const img = document.createElement("img")
-        img.id = `thumbnail-${index + 1}`
-        img.src = image
-        img.alt = `${product.name} View ${index + 1}`
-        img.className = "thumbnail"
-
-        img.addEventListener("click", function () {
-          document.getElementById("product-image").src = this.src
-        })
-
-        colDiv.appendChild(img)
-        thumbnailsContainer.appendChild(colDiv)
-      })
-    }
-
-    document.getElementById("product-title").textContent = product.name
-    document.getElementById("product-price").textContent = product.price
-    document.getElementById("add-to-cart").setAttribute("data-product-id", product.id)
-
-    document.title = `${product.name} - Lyfestyle Shop`
-
-    const detailsContainer = document.getElementById("product-details")
-    detailsContainer.innerHTML = `
-            <p>ITEM IS IN STOCK AND SHIPS IN 3-5 BUSINESS DAYS</p>
-            <p>${product.name.includes("HAT") ? "EMBROIDERED FRONT GRAPHICS<br>ADJUSTABLE 5 PANEL HAT<br>COLOR BLACK" : "PREMIUM QUALITY MATERIAL"}</p>
-        `
-
-    const otherProducts = data.products.filter((p) => p.id !== productId)
-    const selectedProducts = otherProducts.sort(() => Math.random() - 0.5).slice(0, 4)
-    const alsoAvailableContainer = document.getElementById("also-available-container")
-    alsoAvailableContainer.innerHTML = ""
+    const alsoAvailableContainer = document.getElementById("also-available-container");
+    alsoAvailableContainer.innerHTML = "";
 
     selectedProducts.forEach((p) => {
       const productImage = Array.isArray(p.productImage)
         ? p.productImage[0]
         : p.frontImage
-          ? `../img/${p.frontImage.split("/").pop()}`
-          : "../img/placeholder.webp"
+        ? `../img/${p.frontImage.split("/").pop()}`
+        : "../img/placeholder.webp";
 
       const merchItem = `
-                <div class="col-md-3 col-6 merch-item">
-                    <a href="?id=${p.id}">
-                        <img src="${productImage}" class="merch-image" alt="${p.name}">
-                        <div class="merch-title">${p.name}</div>
-                        <div class="merch-price">${p.price}</div>
-                    </a>
-                </div>
-            `
+        <div class="col-md-3 col-6 merch-item">
+          <a href="?id=${p.id}">
+            <img src="${productImage}" class="merch-image" alt="${p.name}">
+            <div class="merch-title">${p.name}</div>
+            <div class="merch-price">${p.price.replace(',', '.')}</div>
+          </a>
+        </div>
+      `;
 
-      alsoAvailableContainer.innerHTML += merchItem
-    })
+      alsoAvailableContainer.innerHTML += merchItem;
+    });
 
-    const addToCartBtn = document.getElementById("add-to-cart")
+    console.log("✅ Ook beschikbaar sectie bijgewerkt");
+
+    // ✅ 8. Setup 'add to cart'
+    const addToCartBtn = document.getElementById("add-to-cart");
     if (addToCartBtn) {
-      console.log("Add to cart button found")
-
       addToCartBtn.addEventListener("click", function () {
-        const productId = this.getAttribute("data-product-id")
-        console.log(`Adding product ${productId} to cart`)
-
-        addToCart(productId)
-      })
+        const id = parseInt(this.getAttribute("data-product-id"));
+        console.log("🛒 Product toevoegen aan winkelwagen:", id);
+        addToCart(id);
+      });
     } else {
-      console.error("Add to cart button not found")
+      console.error("❌ Kan 'Add to Cart'-knop niet vinden");
     }
+
+    updateCartCount();
   } catch (error) {
-    console.error("Error loading product:", error)
+    console.error("❌ Fout bij het laden van het product:", error);
     document.querySelector(".product-container").innerHTML =
-      '<div class="col-12 text-center text-white">Error loading product. Please try again later.</div>'
+      '<div class="col-12 text-center text-white">Fout bij laden van product. Probeer het later opnieuw.</div>';
   }
-})
+});
 
-function updateCartCount() {
-  const cartCountElement = document.getElementById("cart-count")
-  if (!cartCountElement) return
+// 🛒 Voeg toe aan winkelwagen
+function addToCart(id) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existing = cart.find((item) => item.id === id);
 
-  const cart = JSON.parse(localStorage.getItem("cart")) || []
-
-  const isOldFormat = Array.isArray(cart) && cart.length > 0 && typeof cart[0] !== "object"
-
-  let itemCount
-  if (isOldFormat) {
-    itemCount = cart.length
+  if (existing) {
+    existing.quantity++;
+    console.log(`✅ Verhoogd aantal van product ${id} in winkelwagen`);
   } else {
-    itemCount = cart.reduce((total, item) => total + item.quantity, 0)
+    cart.push({ id, quantity: 1 });
+    console.log(`✅ Nieuw product toegevoegd aan winkelwagen: ${id}`);
   }
 
-  cartCountElement.textContent = itemCount
-  cartCountElement.style.display = itemCount > 0 ? "inline-block" : "none"
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+// 🧮 Toon aantal items in winkelwagen
+function updateCartCount() {
+  const cartCountElement = document.getElementById("cart-count");
+  if (!cartCountElement) return;
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  cartCountElement.textContent = total;
+  cartCountElement.style.display = total > 0 ? "inline-block" : "none";
+
+  console.log("🧾 Winkelwagen bijgewerkt. Totaal items:", total);
 }

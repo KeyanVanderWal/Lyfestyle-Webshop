@@ -213,14 +213,14 @@ function saveProduct() {
     const index = products.findIndex(p => p.id === product.id);
     
     if (index !== -1) {
-      product.detailsLink = products[index].detailsLink || `productDetail.html?id=${product.id}`;
+      product.detailsLink = products[index].detailsLink || `/pages/productDetail.html?id=${product.id}`;
       
       products[index] = product;
     }
   } else {
     const maxId = products.reduce((max, product) => Math.max(max, product.id), 0);
     product.id = maxId + 1;
-    product.detailsLink = `productDetail.html?id=${product.id}`;
+    product.detailsLink = `/pages/productDetail.html?id=${product.id}`;
     
     products.push(product);
   }
