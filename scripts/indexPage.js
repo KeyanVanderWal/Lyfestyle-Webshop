@@ -62,9 +62,12 @@ async function loadProducts() {
 }
 
 function setupProductImageInteractions() {
+  // Detect if device supports touch
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   const productContainers = document.querySelectorAll(".product-image-container");
 
   productContainers.forEach((container) => {
+    // Mouse hover for desktop devices
     container.addEventListener("mouseenter", function() {
       const frontImg = this.querySelector(".img-front");
       const hoverImg = this.querySelector(".img-hover");
@@ -83,54 +86,47 @@ function setupProductImageInteractions() {
       }
     });
 
-    container.addEventListener("touchstart", function(e) {
-      if (!this.classList.contains("touched")) {
-        e.preventDefault();
+    // Touch handling for mobile devices
+    if (isTouchDevice) {
+      container.addEventListener("touchstart", function(e) {
+        // Only handle the special touch behavior if we're not clicking on the link directly
+        if (!e.target.closest('.product-image-link') && !this.classList.contains("touched")) {
+          e.preventDefault();
 
-        document.querySelectorAll(".product-image-container.touched").forEach((el) => {
-          if (el !== this) {
-            el.classList.remove("touched");
-            const frontImg = el.querySelector(".img-front");
-            const hoverImg = el.querySelector(".img-hover");
-            if (frontImg && hoverImg) {
-              frontImg.style.opacity = "1";
-              hoverImg.style.opacity = "0";
+          document.querySelectorAll(".product-image-container.touched").forEach((el) => {
+            if (el !== this) {
+              el.classList.remove("touched");
+              const frontImg = el.querySelector(".img-front");
+              const hoverImg = el.querySelector(".img-hover");
+              if (frontImg && hoverImg) {
+                frontImg.style.opacity = "1";
+                hoverImg.style.opacity = "0";
+              }
             }
+          });
+
+          this.classList.add("touched");
+          const frontImg = this.querySelector(".img-front");
+          const hoverImg = this.querySelector(".img-hover");
+          if (frontImg && hoverImg) {
+            frontImg.style.opacity = "0";
+            hoverImg.style.opacity = "1";
           }
-        });
-
-        this.classList.add("touched");
-        const frontImg = this.querySelector(".img-front");
-        const hoverImg = this.querySelector(".img-hover");
-        if (frontImg && hoverImg) {
-          frontImg.style.opacity = "0";
-          hoverImg.style.opacity = "1";
         }
-      }
-    }, { passive: false });
+      }, { passive: false });
+    }
 
+    // Product link click handling
     const productLink = container.querySelector(".product-image-link");
     if (productLink) {
       productLink.addEventListener("click", function(e) {
-        const container = this.closest(".product-image-container");
-        if (container && container.classList.contains("touched")) {
-          return true;
-        } else {
-          e.preventDefault();
-          if (container) {
-            container.classList.add("touched");
-            const frontImg = container.querySelector(".img-front");
-            const hoverImg = container.querySelector(".img-hover");
-            if (frontImg && hoverImg) {
-              frontImg.style.opacity = "0";
-              hoverImg.style.opacity = "1";
-            }
-          }
-        }
+        // On desktop or when already touched, navigate directly
+        // No need to prevent default - let the link work naturally
       });
     }
   });
 
+  // Clear touched state when clicking outside
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".product-image-container")) {
       document.querySelectorAll(".product-image-container.touched").forEach((container) => {
