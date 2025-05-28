@@ -1,8 +1,15 @@
-# Bit Academy Credit Shop
+# lyfestyle corporation webshop
 
 Een webshop applicatie voor Lyfestyle Corporation, gebouwd met HTML, CSS, JavaScript en Bootstrap.
 
 ## Functionaliteiten
+
+Deze webshop heeft een:
+- Home page
+- Product detail page
+- Shopping cart
+- Payment page
+- Admin Pannel
 
 ### Eindgebruiker
 - Overzicht van alle producten
@@ -23,6 +30,4 @@ Een webshop applicatie voor Lyfestyle Corporation, gebouwd met HTML, CSS, JavaSc
   - Producten
   - Winkelwagen
   - Bestellingen
-- Responsive design met Bootstrap 5
-- Form validatie
-- Clean code principes
+- Responsive design

@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     console.log("✅ Product gevonden:", product);
 
-    // ✅ 4. Toon hoofdafbeelding
+    // ✅ 4. Toon ofdafbeelding
     const mainImage = document.getElementById("product-image");
     mainImage.src = product.productImage[0];
     mainImage.alt = product.name;

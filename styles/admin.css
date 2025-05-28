@@ -74,7 +74,8 @@ header {
   width: auto;
 }
 
-.table td, .table th {
+.table td,
+.table th {
   vertical-align: middle;
 }
 
@@ -91,7 +92,8 @@ header {
   color: white;
 }
 
-.modal-header, .modal-footer {
+.modal-header,
+.modal-footer {
   border-color: #444;
 }
 
@@ -99,13 +101,15 @@ header {
   filter: invert(1);
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
   background-color: #333;
   color: white;
   border-color: #555;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
   background-color: #333;
   color: white;
   border-color: #777;
@@ -140,6 +144,34 @@ footer {
   color: white;
   border-color: #777;
   box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+}
+
+.admin-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#reset-products-btn {
+  transition: all 0.3s ease;
+}
+
+#reset-products-btn:hover {
+  background-color: #bb2d3b;
+  transform: scale(1.05);
+}
+
+.toast-container {
+  z-index: 1100;
+}
+
+.toast {
+  background-color: #232323;
+  color: white;
+}
+
+.toast-header {
+  background-color: #333;
+  color: white;
 }
 
 @media (min-width: 768px) {

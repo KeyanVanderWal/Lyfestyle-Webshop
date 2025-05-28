@@ -6,6 +6,8 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
+  color: white;
+  font-family: 'Arial', sans-serif;
 }
 
 header {
@@ -55,15 +57,45 @@ header {
 
 .listen-now:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
 }
 
-.cart-container {
-  position: relative;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
+.admin-btn {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid white;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+}
+
+.cart-container,
 .cart-icon {
+  position: relative;
   color: white;
   font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.cart-icon:hover {
+  color: white;
 }
 
 .badge {
@@ -231,6 +263,15 @@ footer {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
 @media (max-width: 768px) {
   .shop-title h1 {
     font-size: 1.2rem;
@@ -239,5 +280,18 @@ footer {
   .listen-now {
     padding: 4px 12px;
     font-size: 0.8rem;
+  }
+
+  .admin-btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .admin-text {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 10px;
   }
 }

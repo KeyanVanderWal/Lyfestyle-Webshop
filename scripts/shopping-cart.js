@@ -3,21 +3,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     displayCart()
 
-    const clearCartButton = document.getElementById("clear-cart")
-    if (clearCartButton) {
-        clearCartButton.addEventListener("click", clearCart)
-    }
-
-    const checkoutButton = document.getElementById("checkout-btn")
-    if (checkoutButton) {
-        checkoutButton.addEventListener("click", (e) => {
-            e.preventDefault()
-            showNotification("Checkout functionality would be implemented here")
-        })
-    }
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        if (cart.length === 0) {
+            showNotification("Je winkelwagen is leeg!");
+            return;
+        }
+        
+        const bestellingId = generateOrderId();
+        
+        let bestellingen = JSON.parse(localStorage.getItem("bestellingen")) || {};
+        
+        bestellingen[bestellingId] = {
+            id: bestellingId,
+            items: cart,
+            datum: new Date().toISOString(),
+            status: 'pending'
+        };
+        
+        localStorage.setItem("bestellingen", JSON.stringify(bestellingen));
+        
+        localStorage.setItem("currentBestellingId", bestellingId);
+        
+        console.log("Bestelling opgeslagen met ID:", bestellingId, cart);
+        showNotification(`Bestelling ${bestellingId} opgeslagen!`);
+        
+        
+        window.location.href = 'checkout.html';
+    });
 
     updateCartCount()
 })
+
+function generateOrderId() {
+    const timestamp = Date.now();
+    const random = Math.floor(Math.random() * 1000);
+    return `ORDER-${timestamp}-${random}`;
+}
 
 function parsePrice(priceString) {
     if (!priceString) return 0
@@ -280,8 +303,98 @@ function showNotification(message) {
     }, 3000)
 }
 
+
+function getAllBestellingen() {
+    return JSON.parse(localStorage.getItem("bestellingen")) || {};
+}
+
+function getBestelling(bestellingId) {
+    const bestellingen = getAllBestellingen();
+    return bestellingen[bestellingId] || null;
+}
+
+function getCurrentBestelling() {
+    const currentId = localStorage.getItem("currentBestellingId");
+    if (currentId) {
+        return getBestelling(currentId);
+    }
+    return null;
+}
+
+function updateBestelling(bestellingId, updates) {
+    const bestellingen = getAllBestellingen();
+    if (bestellingen[bestellingId]) {
+        bestellingen[bestellingId] = { ...bestellingen[bestellingId], ...updates };
+        localStorage.setItem("bestellingen", JSON.stringify(bestellingen));
+        return true;
+    }
+    return false;
+}
+
+function deleteBestelling(bestellingId) {
+    const bestellingen = getAllBestellingen();
+    if (bestellingen[bestellingId]) {
+        delete bestellingen[bestellingId];
+        localStorage.setItem("bestellingen", JSON.stringify(bestellingen));
+        return true;
+    }
+    return false;
+}
+
+function clearAllBestellingen() {
+    localStorage.removeItem("bestellingen");
+    localStorage.removeItem("currentBestellingId");
+    console.log("Alle bestellingen gewist");
+}
+
+function updateBestellingStatus(bestellingId, status) {
+    return updateBestelling(bestellingId, { status: status });
+}
+
+function completeCheckout() {
+    const currentId = localStorage.getItem("currentBestellingId");
+    if (currentId) {
+        updateBestellingStatus(currentId, 'completed');
+        
+        clearCart();
+        
+        localStorage.removeItem("currentBestellingId");
+        
+        console.log(`Checkout voltooid voor bestelling ${currentId}`);
+        showNotification("Bestelling succesvol geplaatst!");
+        
+        return true;
+    }
+    return false;
+}
+
+function cancelCheckout() {
+    const currentId = localStorage.getItem("currentBestellingId");
+    if (currentId) {
+        deleteBestelling(currentId);
+        
+        localStorage.removeItem("currentBestellingId");
+        
+        console.log(`Checkout geannuleerd voor bestelling ${currentId}`);
+        showNotification("Checkout geannuleerd");
+        
+        return true;
+    }
+    return false;
+}
+
 window.addToCart = addToCart
 window.removeFromCart = removeFromCart
 window.updateQuantity = updateQuantity
 window.clearCart = clearCart
 window.updateCartCount = updateCartCount
+window.generateOrderId = generateOrderId
+window.getAllBestellingen = getAllBestellingen
+window.getBestelling = getBestelling
+window.getCurrentBestelling = getCurrentBestelling
+window.updateBestelling = updateBestelling
+window.deleteBestelling = deleteBestelling
+window.clearAllBestellingen = clearAllBestellingen
+window.updateBestellingStatus = updateBestellingStatus
+window.completeCheckout = completeCheckout
+window.cancelCheckout = cancelCheckout
