@@ -255,9 +255,15 @@ function updateProductsJSON() {
   console.log("New products.json data:", JSON.stringify(productsData, null, 2))
 }
 
+// FIXED FUNCTION - Dit is de belangrijkste fix voor het reset probleem
 async function resetProducts() {
   try {
     await loadOriginalProducts()
+    
+    // Update beide localStorage items zodat zowel admin panel als frontend worden gereset
+    localStorage.setItem("admin_products", JSON.stringify(products))
+    localStorage.setItem("products", JSON.stringify({ products: products }))
+    
     displayProducts()
     resetModal.hide()
     showToast("All products have been reset to their original state!")
