@@ -1,4 +1,4 @@
-# lyfestyle corporation webshop
+# lyfestyle corporation webshop 
 
 Een webshop applicatie voor Lyfestyle Corporation, gebouwd met HTML, CSS, JavaScript en Bootstrap.
 
@@ -31,3 +31,12 @@ Deze webshop heeft een:
   - Winkelwagen
   - Bestellingen
 - Responsive design
+
+
+## Local setup
+- Open "index.html" in visual studio code
+- Rechtermuis klik op een gedeelte zonder text
+- Klik "open met live server"
+
+## Online Website
+- ga naar https://lyfestyleshop.netlify.app
